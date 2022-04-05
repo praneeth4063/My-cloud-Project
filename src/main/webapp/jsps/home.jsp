@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1> Hello EveryOne!  Good Morning</h1>
-<h1> Hello mister</h1>
+<h1> This is cloud project by Praneth and Team.</h1>
 </body>
 </html>
