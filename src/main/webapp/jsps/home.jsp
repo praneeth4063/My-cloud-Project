@@ -9,7 +9,6 @@
 <body>
 <h1> Hello EveryOne!  Good Morning</h1>
 <h1> This is cloud project by Praneeth and Team.</h1>
-<h1> This is sample for CI/CD build</h1>
 
 
 </body>
