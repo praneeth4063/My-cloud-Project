@@ -4,12 +4,12 @@
 	
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
-	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	
 	<name>maven-web-application</name>
 
-	<description>Maven Web Project for Java Project</description>
+	<description>Maven Web Project for Java Programming Language</description>
 
 	<organization>
 		<name>Mithun Technologies</name>
@@ -21,9 +21,10 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.11.38:8081:9000/</sonar.host.url>
+		<sonar.host.url>http://18.206.135.156:9000/</sonar.host.url>
                 <sonar.login>09ed940ae36d15ae6a5b015bacb0d57e3c8ef5fa</sonar.login>
-		<!--<sonar.password>admin123</sonar.password>--> 
+		
+             
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -97,20 +98,20 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name> Releases Nexus Repository</name>
-	      <url>http://172.31.11.38:8081/repository/CloudProject-release/</url>
+	      <name>Praneeth Technologies Releases Nexus Repository</name>
+	      <url>http://18.206.135.156:8081/repository/CloudProject-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Snapshot Nexus Repository </name>
-	      <url>http://172.31.11.38:8081/repository/CloudProject-snapshot/</url>
+	      <name>Praneeth Technologies Snapshot Nexus Repository </name>
+	      <url>http://18.206.135.156:8081/repository/CloudProject-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>Praneeth_Cloud_Project</finalName>
+		<finalName>maven-web-application</finalName>
 		
 		<plugins>
 			<plugin>
