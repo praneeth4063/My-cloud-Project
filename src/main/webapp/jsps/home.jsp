@@ -10,6 +10,7 @@
 <h1> Hello EveryOne!  Good Morning</h1>
 <h1> This is cloud project by Praneeth and Team..</h1>
 <h1> This is Docker cloud project by Praneeth and Team and group..</h1>
+<h1> This is Docker cloud project by Praneeth and Team and group....Thanmks Kalyan</h1>
 
 
 </body>
