@@ -1,0 +1,39 @@
+node
+{
+    def mavenHome = tool name: "Maven"
+    
+     stage ('Git Clone'){
+        git credentialsId: 'Git_Cred', url: 'https://github.com/praneeth4063/My-cloud-Project.git'
+    }
+    
+     stage('Build')
+    {
+        sh "$mavenHome/bin/mvn clean package"
+    }
+    
+    stage('Upload into Nexus')
+    {
+        sh "$mavenHome/bin/mvn deploy"
+    }
+
+    stage('Build and Deploy image into Docker ')
+    {
+        sshagent(['Tomcat_Credentials']) 
+        {
+        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.94.61:/home/ec2-user"
+    
+        sh "ssh -o StrictHostKeyChecking=no  ec2-user@172.31.94.61 docker system prune -f" 
+        
+        sh "ssh -o StrictHostKeyChecking=no  ec2-user@172.31.94.61 docker service rm praneeth" 
+        
+        sh "ssh -o StrictHostKeyChecking=no  ec2-user@172.31.94.61 docker build -t praneeth4063/tomcat:latest ."
+        
+        sh "ssh -o StrictHostKeyChecking=no  ec2-user@172.31.94.61 docker push praneeth4063/tomcat:latest"
+        
+        sh "ssh -o StrictHostKeyChecking=no  ec2-user@172.31.94.61 docker service create --replicas 3 --name myservice -p 80:8080 --name praneeth praneeth4063/tomcat:latest" 
+        
+        
+        }
+    }
+
+}
