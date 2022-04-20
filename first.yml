@@ -6,3 +6,10 @@
   tasks:
     - name: test connection
       ansible.builtin.ping:
+
+    - name: copy war file
+     copy:
+     src: target/maven-web-application.war 
+     dest: /opt/apache-tomcat-8.5.78/webapps
+
+     
