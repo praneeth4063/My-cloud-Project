@@ -1,15 +1,13 @@
 ---
-- name: ping module demo
+     
+- name: Copy file
   hosts: servers
   become: false
-
+ 
   tasks:
-    - name: test connection
-      ansible.builtin.ping:
-
-    - name: copy war file
-     copy:
-     src: target/maven-web-application.war 
-     dest: /opt/apache-tomcat-8.5.78/webapps
-
-     
+  - name: Copy file from the Ansible server to myRemoteNode
+    copy:
+      # file and location path on the Ansible server
+      src: target/maven-web-application.war 
+      # file and location path on myRemoteNode
+      dest: /opt/apache-tomcat-8.5.78/webapps
